@@ -69,6 +69,15 @@ func main() {
 					return nil
 				},
 			},
+			{
+				Name:    "delete",
+				Usage:   "delete a task",
+				Aliases: []string{"r"},
+				Action: func(c *cli.Context) error {
+					delete(filename, c.Args().Slice())
+					return nil
+				},
+			},
 		},
 	}
 

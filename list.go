@@ -9,7 +9,8 @@ import (
 )
 
 const (
-	doneMark = "\u2610"
+	doneMark1 = "\u2610"
+	doneMark2 = "\u2611"
 )
 
 func list(filename string) error {
