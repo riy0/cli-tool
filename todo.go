@@ -16,7 +16,7 @@ const (
 
 func getStorageFile() string {
 	filename := ""
-	exitstNowTodo := false
+	existNowTodo := false
 	nowDir, err := os.Getwd()
 	if err == nil {
 		filename = filepath.Join(nowDir, todoFilename)
@@ -100,7 +100,7 @@ func main() {
 		},
 	}
 
-	sort.Sort(cli.FlasByName(app.Flags))
+	sort.Sort(cli.FlagsByName(app.Flags))
 	sort.Sort(cli.CommandsByName(app.Commands))
 
 	err := app.Run(os.Args)

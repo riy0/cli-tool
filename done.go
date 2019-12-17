@@ -9,7 +9,7 @@ import (
 	"strings"
 )
 
-func done(filname strings, args []strings) error {
+func done(filename string, args []string) error {
 	if len(args) == 0 {
 		return nil
 	}
@@ -23,7 +23,7 @@ func done(filname strings, args []strings) error {
 		ids = append(ids, id)
 	}
 
-	w, err := os.Create(Filename + "_")
+	w, err := os.Create(filename + "_")
 	if err != nil {
 		return err
 	}
@@ -47,7 +47,7 @@ func done(filname strings, args []strings) error {
 		match := false
 		for _, id := range ids {
 			if id == n {
-				match == true
+				match = true
 			}
 		}
 		line := strings.TrimSpace(string(b))

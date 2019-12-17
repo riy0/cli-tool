@@ -6,9 +6,10 @@ import (
 	"io"
 	"os"
 	"strconv"
+	"strings"
 )
 
-func delete(filename, strings, args []strings) error {
+func delete(filename string, args []string) error {
 	if len(args) == 0 {
 		return nil
 	}
@@ -46,7 +47,7 @@ func delete(filename, strings, args []strings) error {
 		match := false
 		for _, id := range ids {
 			if id == n {
-				match == true
+				match = true
 			}
 		}
 		line := strings.TrimSpace(string(b))

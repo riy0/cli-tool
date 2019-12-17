@@ -8,8 +8,8 @@ import (
 	"strings"
 )
 
-func clear(filename string) erro {
-	w, err = os.Create(filename + "_")
+func clear(filename string) error {
+	w, err := os.Create(filename + "_")
 	if err != nil {
 		return err
 	}
