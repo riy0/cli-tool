@@ -6,6 +6,7 @@ import (
 	"os"
 	"path/filepath"
 	"sort"
+	"strconv"
 
 	"github.com/urfave/cli/v2"
 )
@@ -93,6 +94,30 @@ func main() {
 				Aliases: []string{"c"},
 				Action: func(c *cli.Context) error {
 					clear(filename)
+					list(filename)
+					return nil
+				},
+			},
+			{
+				Name:    "sort",
+				Usage:   "sort tasks",
+				Aliases: []string{"s"},
+				Action: func(c *cli.Context) error {
+					sortTasks(filename)
+					list(filename)
+					return nil
+				},
+			},
+			{
+				Name:    "rename",
+				Usage:   "rename a task",
+				Aliases: []string{"re"},
+				Action: func(c *cli.Context) error {
+					id, err := strconv.Atoi(c.Args().Get(0))
+					if err != nil {
+						return err
+					}
+					rename(filename, c.Args().Get(1), id)
 					list(filename)
 					return nil
 				},
