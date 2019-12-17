@@ -70,6 +70,15 @@ func main() {
 				},
 			},
 			{
+				Name:    "undone",
+				Usage:   "undone tasks",
+				Aliases: []string{"u"},
+				Action: func(c *cli.Context) error {
+					undone(filename, c.Args().Slice())
+					return nil
+				},
+			},
+			{
 				Name:    "delete",
 				Usage:   "delete a task",
 				Aliases: []string{"r"},
